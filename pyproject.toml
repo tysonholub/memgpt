@@ -22,17 +22,30 @@ pythonpath = [
 ]
 
 [tool.poetry]
-name = "boilerplate"
-version = "0.0.0"
+name = "memgpt"
+version = "0.1.0"
 description = ""
 authors = ["Tyson Holub <tyson@tysonholub.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "boilerplate", from="pysrc"}]
+packages = [{include = "memgpt", from="pysrc"}]
 include = ["LICENSE"]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.11,<3.13"
+absl-py = "^2.0.0"
+colorama = "^0.4.6"
+demjson3 = "^3.0.6"
+faiss-cpu = "^1.7.4"
+geopy = "^2.4.0"
+numpy = "^1.26.1"
+openai = "^0.28.1"
+pybars3 = "^0.9.7"
+python-dotenv = "^1.0.0"
+pytz = "^2023.3.post1"
+rich = "^13.6.0"
+tiktoken = "^0.5.1"
+timezonefinder = "^6.2.0"
 typer = "^0.9"
 
 [tool.poetry.group.dev.dependencies]
@@ -40,9 +53,6 @@ coverage = "^7"
 pytest = "^7"
 pytest-asyncio = "^0.21"
 pytest-timeout = "^2"
-
-[tool.poetry.scripts]
-boilerplate = { callable = "boilerplate.cli:app" }
 
 [tool.isort]
 line_length = 119
