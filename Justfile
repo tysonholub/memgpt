@@ -47,3 +47,13 @@ test path="":
     poetry run coverage run -m pytest {{path}} -vv
     poetry run coverage report -m
     poetry run coverage html
+
+
+create_env:
+    #!/bin/bash
+    set -euo pipefail
+
+    echo "Enter your OPENAI_API_KEY: ";
+    read api_key;
+
+    echo "OPENAI_API_KEY=$api_key" > .env
